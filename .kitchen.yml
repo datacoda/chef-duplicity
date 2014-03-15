@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+  - name: duplicity-pkg
+    run_list:
+      - recipe[apt::default]
+      - recipe[duplicity::default]
+    attributes:
+      duplicity:
+        install_method: 'package'
+  - name: duplicity-src
+    run_list:
+      - recipe[apt::default]
+      - recipe[duplicity::default]
+    attributes:
+      duplicity:
+        install_method: 'source'
