@@ -59,4 +59,5 @@ checkinstall_opts << "--maintainer=ted@nephilagraphic.com"
 bash 'compile_duplicity_source' do
   cwd  src_dir_unpack
   code "checkinstall #{checkinstall_opts.flatten.join ' '} python setup.py install"
+  not_if "dpkg -l | grep duplicity#{node['duplicity']['source']['version']}"
 end
