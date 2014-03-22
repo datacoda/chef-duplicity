@@ -3,6 +3,10 @@ duplicity cookbook
 
 No-frills duplicity installation from source.  By default uses the package version.
 
+Supports:
+
+* Ubuntu 12.04
+* Debian 7.4
 
 Requirements
 ------------
